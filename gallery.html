@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | ICNVIP-2027</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="header-placeholder"></header>
+
+  <div id="hero-banner-placeholder" 
+       data-title="Photo & Video Gallery" 
+       data-subtitle="Moments captured during preceding workshops, keynote presentations, campus events, and laboratory tours.">
+  </div>
+
+  <main class="container section">
+    
+    <!-- Gallery Filters -->
+    <div class="gallery-filters fade-up">
+      <button class="gallery-filter-btn active" onclick="filterGallery(this, 'all')">All Media</button>
+      <button class="gallery-filter-btn" onclick="filterGallery(this, 'session')">Sessions</button>
+      <button class="gallery-filter-btn" onclick="filterGallery(this, 'event')">Events</button>
+      <button class="gallery-filter-btn" onclick="filterGallery(this, 'campus')">Campus</button>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="gallery-masonry" id="gallery-masonry-container">
+      <!-- Rendered by main.js -->
+    </div>
+  </main>
+
+  <!-- Lightbox Modal Container -->
+  <div class="lightbox" id="lightbox-modal-element">
+    <button class="lightbox-close" aria-label="Close Lightbox">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="lightbox-content">
+      <div class="lightbox-media">
+        <i class="fa-regular fa-image"></i>
+      </div>
+      <div class="lightbox-info">
+        <div>
+          <span class="lightbox-cat" id="lightbox-cat">Category</span>
+          <h3 class="lightbox-title font-poppins font-bold" id="lightbox-title">Image Title</h3>
+          <p class="lightbox-desc" id="lightbox-desc">Detailed explanation of the visual artifact.</p>
+        </div>
+        
+        <div class="lightbox-placeholder-notice">
+          This is an interactive lightbox mockup for the conference gallery demonstration.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer-placeholder"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration | ICNVIP-2027</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="header-placeholder"></header>
+
+  <div id="hero-banner-placeholder" 
+       data-title="Registration & Fees" 
+       data-subtitle="Explore registration fees, delegate options, author benefits, bank details, and secure online portal instructions.">
+  </div>
+
+  <main class="container section" style="display: flex; flex-direction: column; gap: 4rem;">
+    <!-- Pricing Cards Grid -->
+    <section>
+      <div class="pricing-grid" id="pricing-cards-container">
+        <!-- Rendered by main.js -->
+      </div>
+    </section>
+
+    <!-- Registration Benefits -->
+    <section class="card fade-up" style="gap: 1.5rem;">
+      <h3 style="font-weight: 800; font-size: 1.25rem;">Registration Benefits</h3>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <span style="display: flex; gap: 0.5rem; align-items: flex-start;"><i class="fa-regular fa-circle-check text-blue-500" style="margin-top: 0.25rem;"></i> Access to all technical and plenary sessions on site.</span>
+          <span style="display: flex; gap: 0.5rem; align-items: flex-start;"><i class="fa-regular fa-circle-check text-blue-500" style="margin-top: 0.25rem;"></i> Publication of 1 approved paper in the proceedings.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <span style="display: flex; gap: 0.5rem; align-items: flex-start;"><i class="fa-regular fa-circle-check text-blue-500" style="margin-top: 0.25rem;"></i> Conference delegate kit containing abstracts CD and prints.</span>
+          <span style="display: flex; gap: 0.5rem; align-items: flex-start;"><i class="fa-regular fa-circle-check text-blue-500" style="margin-top: 0.25rem;"></i> Buffet lunch and coffee refreshments across the two days.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment details section -->
+    <section class="card fade-up" id="payment-section" style="gap: 1.5rem;">
+      <h3 style="font-weight: 800; font-size: 1.25rem;">Payment Instructions</h3>
+      <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+        Payment can be initiated using electronic NEFT/RTGS bank transfers or international gateway cards. Please fill in the registration form from the Downloads page and send the receipt copy to payment@icnvip2027.org.
+      </p>
+      
+      <!-- Bank details table -->
+      <div style="border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; font-size: 0.8rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; background-color: var(--bg-color); font-weight: 700;">
+          <span>Account Parameter</span>
+          <span>Details</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem;">
+          <span class="text-muted">Account Holder Name</span>
+          <span style="font-weight: 600;">Registrar, Bharati Vidyapeeth College of Engineering</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem;">
+          <span class="text-muted">Bank Name</span>
+          <span style="font-weight: 600;">Bharati Sahakari Bank Ltd., Pune</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem;">
+          <span class="text-muted">Account Number</span>
+          <span style="font-weight: 600;">201209XXXXXXXXX</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; padding: 0.75rem 1rem;">
+          <span class="text-muted">IFSC Code</span>
+          <span style="font-weight: 600;">SVCB0010002</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+        <button onclick="alert('Secured registration gateway loading...')" class="btn btn-primary">Online Payment Portal</button>
+        <a href="downloads.html" class="btn btn-outline">Registration Form Download</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-placeholder"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
