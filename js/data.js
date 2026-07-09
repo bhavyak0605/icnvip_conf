@@ -259,14 +259,7 @@ window.ConferenceData = {
     }
   ],
 
-  gallery: [
-    { id: 1, title: "Keynote Plenary Session", category: "photo", caption: "Audience listening to the nanoelectronics breakthrough presentation.", image: "plenary" },
-    { id: 2, title: "Best Paper Felicitation", category: "photo", caption: "Honoring outstanding research contributions from the Image Processing track.", image: "felicitation" },
-    { id: 3, title: "Poster Exhibition Area", category: "photo", caption: "Researchers discussing embedded system models with advisory members.", image: "posters" },
-    { id: 4, title: "College Main Entrance", category: "photo", caption: "Main academic building of Bharati Vidyapeeth College of Engineering, Pune.", image: "campus" },
-    { id: 5, title: "Panel Discussion Video", category: "video", caption: "Video recording covering the future trends in low-power chip synthesis.", image: "panel-video" },
-    { id: 6, title: "VLSI Laboratory Visit", category: "photo", caption: "Touring the fabrication and testing labs at Pune campus.", image: "lab-visit" }
-  ],
+  
 
   hotels: [
     { name: "The Pride Hotel Pune", distance: "6.5 km from Venue", rating: "★★★★★", desc: "Premium rooms, dining facilities, and reliable travel desk assistance." },
