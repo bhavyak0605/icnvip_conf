@@ -20,22 +20,23 @@
     <div class="contact-grid">
       <!-- Contact Info -->
       <div class="contact-info-column fade-up">
-        <div class="card" style="gap: 1.5rem;">
-          <h3 style="font-weight: 800; font-size: 1.25rem; border-left: 4px solid var(--secondary); padding-left: 0.5rem;">Contact Information</h3>
+        <div class="card contact-card">
+          <h3 class="contact-card-title">Contact Information</h3>
           
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
             <div class="contact-item-details">
               <span class="contact-item-lbl">Email Address</span>
-              <a href="mailto:contact@icnvip2027.org" class="contact-item-val">contact@icnvip2027.org</a>
+              <a href="mailto:hvmhetre@bvucoep.edu.in" class="contact-item-val">hvmhetre@bvucoep.edu.in</a>
             </div>
           </div>
 
           <div class="contact-item">
-            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-item-icon"><i class="fa-solid fa-globe"></i></div>
             <div class="contact-item-details">
-              <span class="contact-item-lbl">Phone Inquiry</span>
-              <a href="tel:+912024107300" class="contact-item-val">+91-20-24107300</a>
+              <span class="contact-item-lbl">Websites</span>
+              <a href="https://icnip.com" target="_blank" class="contact-item-val">https://icnip.com</a>
+              <a href="https://www.bvuniversity.edu.in/coepune/" target="_blank" class="contact-item-val">bvuniversity.edu.in/coepune/</a>
             </div>
           </div>
 
@@ -43,10 +44,10 @@
             <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div class="contact-item-details">
               <span class="contact-item-lbl">Mailing Address</span>
-              <span class="contact-item-val" style="line-height: 1.4;">
-                Dept of Electronics & Communication Engineering,<br>
-                Bharati Vidyapeeth College of Engineering,<br>
-                Pune-Satara Road, Dhankawadi, Pune 411043, India.
+              <span class="contact-item-val-multiline">
+                Bharati Vidyapeeth (Deemed to be University),<br>
+                College of Engineering,<br>
+                Pune–Satara Road, Pune–411043, India.
               </span>
             </div>
           </div>
@@ -54,15 +55,15 @@
 
         <!-- Google Map Reference -->
         <div class="contact-map-placeholder">
-          <i class="fa-solid fa-map-location-dot" style="font-size: 2rem; color: #CBD5E1; margin-bottom: 0.5rem;"></i>
-          <span style="font-weight: 700; color: var(--text-dark); font-size: 0.95rem;">Bharati Vidyapeeth Campus Pune</span>
-          <span class="text-muted" style="font-size: 0.75rem;">Get routes on Google Maps</span>
+          <i class="fa-solid fa-map-location-dot map-placeholder-icon"></i>
+          <span class="map-placeholder-title">Bharati Vidyapeeth Campus Pune</span>
+          <span class="text-muted text-muted-xs">Get routes on Google Maps</span>
         </div>
       </div>
 
       <!-- Form Column -->
       <div class="card contact-form-card fade-up">
-        <h3 style="font-weight: 800; font-size: 1.25rem; border-left: 4px solid var(--secondary); padding-left: 0.5rem; margin-bottom: 2rem;">Inquiry Form</h3>
+        <h3 class="contact-card-title contact-card-title-margin">Inquiry Form</h3>
         <form id="contact-form-element">
           <div class="form-group-row">
             <div class="form-group">
@@ -82,7 +83,7 @@
 
           <div class="form-group">
             <label for="subject" class="form-label">Subject of Inquiry</label>
-            <select id="subject" class="form-input" style="appearance: none; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%274%27 height=%275%27%3E%3Cpath fill=%27%2394a3b8%27 d=%27M2 0L0 2h4zm0 5L0 3h4z%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.5rem;" required>
+            <select id="subject" class="form-input form-select-custom" required>
               <option value="" disabled selected>Select an option</option>
               <option value="submission">Manuscript Submission Issues</option>
               <option value="registration">Registration and Payment Confirmations</option>
@@ -97,7 +98,7 @@
             <textarea id="message" class="form-input" placeholder="Describe your inquiry in detail..." required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Send Message</button>
+          <button type="submit" class="btn btn-primary btn-submit-block">Send Message</button>
         </form>
       </div>
     </div>

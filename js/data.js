@@ -57,83 +57,123 @@ window.ConferenceData = {
   ],
 
   committee: {
-    honorary: [
-      { name: "Dr. Vishwajeet Kadam", designation: "Pro-Vice Chancellor & Secretary", institution: "Bharati Vidyapeeth, Pune", avatar: "VK" }
-    ],
+    patrons: {
+      inspiration: [
+        { name: "Hon'ble. Dr. Patangrao Kadam", designation: "Founder Chancellor", institution: "Bharati Vidyapeeth and Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "PK" }
+      ],
+      chief: [
+        { name: "Hon'ble. Dr. Shivajirao Kadam", designation: "Chancellor", institution: "Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "SK" },
+        { name: "Hon'ble. Dr. Vishwajeet Kadam", designation: "Secretary & Pro Vice-Chancellor", institution: "Bharati Vidyapeeth and Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "VK" },
+        { name: "Hon'ble. Dr. Vivek Saoji", designation: "Vice-Chancellor", institution: "Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "VS" }
+      ]
+    },
     general: [
-      { name: "Dr. Vidur A. Patil", designation: "Vice Chancellor", institution: "Bharati Vidyapeeth University, Pune", avatar: "VP" },
-      { name: "Dr. Sunil R. Patil", designation: "Principal", institution: "BVP College of Engineering, Pune", avatar: "SP" }
+      { name: "Dr. Rajesh Prasad", designation: "Principal", institution: "Bharati Vidyapeeth (Deemed to be University), College of Engineering, Pune", avatar: "RP" },
+      { name: "Dr. Ji Mam Kim", designation: "Professor", institution: "Sungkyunkwan University, South Korea", avatar: "JMK" }
     ],
     conference: [
-      { name: "Dr. Arundhati A. Shinde", designation: "Professor & Head, Dept. of E&TC", institution: "BVP College of Engineering, Pune", avatar: "AS" }
+      { name: "Dr. Harshada Mhetre", designation: "Assistant Professor, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "HM" }
     ],
     organizing: [
-      { name: "Prof. Rajesh M. Kumar", designation: "Associate Professor, Dept. of E&TC", institution: "BVP College of Engineering, Pune", avatar: "RK" },
-      { name: "Dr. Shruti S. Deshpande", designation: "Assistant Professor, Dept. of E&TC", institution: "BVP College of Engineering, Pune", avatar: "SD" }
+      { name: "Dr. Deepak Dubal", designation: "School of Chemistry and Physics, Faculty of Science", institution: "Queensland University of Technology, Brisbane, Queensland", avatar: "DD" },
+      { name: "Dr. Ravindra Bulakhe", designation: "Professor, Head", institution: "Symbiosis Centre for Nanoscience and Nanotechnology (SCNN)", avatar: "RB" },
+      { name: "Dr. Mangal Patil", designation: "Associate Professor & Head, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "MP" }
     ],
     finance: [
-      { name: "Prof. Vinayak D. Joshi", designation: "Assistant Professor", institution: "BVP College of Engineering, Pune", avatar: "VJ" }
+      { name: "Prof. Prashant Chougule", designation: "Assistant Professor, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "PC" }
     ],
     publication: [
-      { name: "Dr. Nitin R. Kulkarni", designation: "Professor, Dept. of E&TC", institution: "BVP College of Engineering, Pune", avatar: "NK" }
+      { name: "Prof. Sonali Pawar", designation: "Assistant Professor, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "SP" }
     ],
     publicity: [
-      { name: "Prof. Aniket S. Mehta", designation: "Assistant Professor", institution: "BVP College of Engineering, Pune", avatar: "AM" }
+      { name: "Prof. Vikas Kaduskar", designation: "Assistant Professor, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "VK" }
     ],
     web: [
-      { name: "Prof. Sameer B. Deshmukh", designation: "Assistant Professor", institution: "BVP College of Engineering, Pune", avatar: "SBD" }
+      { name: "Prof. Aparna Patil", designation: "Assistant Professor, Dept. of ECE", institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune", avatar: "AP" }
     ]
   },
 
   advisory: {
     international: [
-      { name: "Dr. Evelyn Sterling", designation: "Professor of Nanotechnology", institution: "Stanford University, USA" },
-      { name: "Dr. Hiroshi Tanaka", designation: "Principal Researcher", institution: "Tokyo Institute of Technology, Japan" },
-      { name: "Prof. Sarah Jenkins", designation: "Lead Scientist, Computer Vision", institution: "University of Cambridge, UK" },
-      { name: "Dr. Matteo Rossi", designation: "Professor of Microelectronics", institution: "Politecnico di Milano, Italy" }
+      { name: "Dr. Ajay K Pandey", designation: "Professor, Electrical Engineering and Robotics", institution: "Queensland University of Technology, Australia" },
+      { name: "Dr. Ashish Bhaskar", designation: "Professor", institution: "Queensland University of Technology, Australia" },
+      { name: "Dr. Yateendra Mishra", designation: "Associate Professor", institution: "Queensland University of Technology, Australia" },
+      { name: "Dr. Udayabhaskar Rednam", designation: "Associate Professor", institution: "Universidad Tecnológica Metropolitana, Santiago, Chile" },
+      { name: "Radhamanohar Aepuru", designation: "AmSRE Lab, Dept. de Ingeniería Mecánica", institution: "Universidad de Chile, Santiago, Chile" },
+      { name: "Dr. Prasad Lokhande", designation: "Assistant Professor, Dept. of Mechanics of Materials", institution: "Institute of Fundamental Technological Research, Polish Academy of Sciences, Warsaw, Poland" },
+      { name: "Dr. Marcin Krajewski", designation: "Researcher", institution: "Institute of Fundamental Technological Research, Polish Academy of Sciences, Warsaw, Poland" },
+      { name: "Professor Numan Arshid", designation: "Head & Professor", institution: "Sunway Centre for Electrochemical Energy and Sustainable Technology, Faculty of Engineering and Technology" },
+      { name: "Ts. Dr Kalidasan Balasubramanian", designation: "Lecturer", institution: "Sunway Centre for Electrochemical Energy and Sustainable Technology, Faculty of Engineering and Technology" },
+      { name: "Dr. Tan Kim Han", designation: "Senior Lecturer", institution: "Sunway University" },
+      { name: "Dr. Pasan Maduranga", designation: "Faculty Member, Dept. of EEE", institution: "University of Sri Jayawardenapura, Sri Lanka" },
+      { name: "Dr. M. Shamim Kaiser", designation: "Faculty Member", institution: "Institute of Information Technology, Jahangirnagar University, Dhaka, Bangladesh" },
+      { name: "Dai-Viet N. Vo", designation: "Faculty Member", institution: "Institute of Applied Technology and Sustainable Development, Nguyen Tat Thanh University, Vietnam" },
+      { name: "M. R. Ashwin Kishore", designation: "Research Professor", institution: "University of Seoul, South Korea" },
+      { name: "Dr. Harish S. Chavan", designation: "Researcher", institution: "Republic of Korea" }
     ],
     national: [
-      { name: "Dr. Amitava Pramanik", designation: "Chief Scientist", institution: "IISc Bangalore" },
-      { name: "Dr. R. K. Shevgaonkar", designation: "Emeritus Professor", institution: "IIT Bombay" },
-      { name: "Dr. K. P. Ray", designation: "Outstanding Scientist & Dean", institution: "DIAT Pune" },
-      { name: "Dr. Bhabatosh Chanda", designation: "Emeritus Professor", institution: "ISI Kolkata" }
+      { name: "Dr. Habib Pathan", designation: "Associate Professor", institution: "Savitribai Phule Pune University, Pune" },
+      { name: "Dr. Sudipta Das", designation: "Professor, ECE Department", institution: "IMPS College of Engineering & Technology, West Bengal, India" },
+      { name: "Dr. Sonawane Chandrakant R.", designation: "Professor & Deputy Head", institution: "Symbiosis Centre for Nanoscience and Nanotechnology (SCNN)" },
+      { name: "Dr. Nithesh Naik", designation: "Faculty Member", institution: "Manipal Institute of Technology, Manipal Academy of Higher Education, India" },
+      { name: "Dr. Pavan Hiremath", designation: "Faculty Member", institution: "Manipal Institute of Technology, Manipal Academy of Higher Education, India" },
+      { name: "Dr. Ritesh Bhat", designation: "Faculty Member", institution: "School of Advanced Manufacturing, SIU" },
+      { name: "Dr. S. B. Goyal", designation: "Faculty Member", institution: "Chitkara University, Punjab, India" },
+      { name: "Dr. Rekha Nair", designation: "Professor", institution: "Poornima College of Engineering, Jaipur, Rajasthan, India" },
+      { name: "Dr. Arun Kumar", designation: "Head, University Dept. of Physics", institution: "Ranchi University, Ranchi" },
+      { name: "Dr. Vijay Nath", designation: "Associate Professor, VLSI Design Group", institution: "Birla Institute of Technology Mesra, Ranchi" },
+      { name: "Dr. Raj Kumar Singh", designation: "Assistant Professor, University Dept. of Physics", institution: "Ranchi University, Ranchi" },
+      { name: "Dr. Bibhudendra Acharya", designation: "Professor", institution: "National Institute of Technology, Raipur" },
+      { name: "Sajal K. Paul", designation: "Professor", institution: "Indian Institute of Technology (School of Mines), Dhanbad" },
+      { name: "Dr. Sukhi Y", designation: "Professor", institution: "R.M.K. Engineering College, Chennai" },
+      { name: "Dr. Rajeev Ranjan", designation: "Associate Professor", institution: "IIT ISM, Dhanbad" }
     ],
     technical: [
-      { name: "Dr. Saurabh Lodha", designation: "Professor, EE Department", institution: "IIT Bombay" },
-      { name: "Dr. Sudeb Dasgupta", designation: "Professor, ECE Department", institution: "IIT Roorkee" },
-      { name: "Dr. Jayadeva", designation: "Professor & Head, EE Department", institution: "IIT Delhi" },
-      { name: "Dr. Anirban Sengupta", designation: "Associate Professor, CSE", institution: "IIT Indore" }
+      { name: "Dr. Abhijit Biswas", designation: "Professor", institution: "Calcutta University, Calcutta, India" },
+      { name: "Dr. Manish Mishra", designation: "Professor, Dept. of Electronics", institution: "DDU University, Gorakhpur" },
+      { name: "Deepak Kumar", designation: "Faculty Member", institution: "Manipal University" },
+      { name: "Dr. Sawanta S. Mali", designation: "Associate Research Professor", institution: "Chonnam National University, Gwangju" },
+      { name: "Dr. T. Pandiyarajan", designation: "Faculty Member", institution: "IIITDM Kurnool" },
+      { name: "Sreekanth Perumbilavil", designation: "Faculty Member", institution: "Manipal Institute of Applied Physics (MIAP), MAHE" },
+      { name: "Prabhakaran Thandapani", designation: "Associate Professor, Dept. of Physics", institution: "School of Advanced Sciences, VIT, AP, India" },
+      { name: "Dr. R. Arthur James", designation: "Professor & Chair, Dept. of Marine Science", institution: "Bharathidasan University" },
+      { name: "Vignesh Sivanandham", designation: "Researcher", institution: "Indian Institute of Food Processing Technology (IIFPT), Tamil Nadu" },
+      { name: "Dr. Hariharan Swaminathan", designation: "C.V. Raman Postdoctoral Researcher", institution: "Indian Institute of Science, Bangalore" },
+      { name: "Kokkarachedu Varaprasad", designation: "Associate Professor", institution: "Universidad San Sebastián" },
+      { name: "Priya Rose T", designation: "Assistant Professor, International School of Photonics", institution: "Cochin University of Science and Technology" },
+      { name: "Debarati Sen", designation: "Research Assistant, Dept. of ECE", institution: "Madison, Wisconsin, United States" },
+      { name: "Titilope Dada", designation: "Research Assistant, Dept. of ECE", institution: "Solar Cells & Thermophotovoltaics, United States" }
     ]
   },
 
   speakers: [
     {
-      name: "Prof. Evelyn Sterling",
-      country: "United States",
-      institution: "Stanford University",
-      area: "Sub-5nm Tunnel FETs, Quantum Semiconductor Interfaces & Nanodevices.",
-      avatar: "ES"
+      name: "Dr. João Manuel R. S. Tavares",
+      country: "Portugal",
+      institution: "Faculdade de Engenharia da Universidade do Porto",
+      area: "Computational Vision, Image Processing & Visualization Methods.",
+      avatar: "JT"
     },
     {
-      name: "Dr. Hiroshi Tanaka",
-      country: "Japan",
-      institution: "Tokyo Institute of Technology",
-      area: "Low-Power 3D-IC Architectures, Neuromorphic Hardware Accelerators.",
-      avatar: "HT"
+      name: "Dr. Deepak Dubal",
+      country: "Australia",
+      institution: "Queensland University of Technology, Brisbane",
+      area: "Functional Energy Materials, Supercapacitors & Nano-technologies.",
+      avatar: "DD"
     },
     {
-      name: "Prof. Sarah Jenkins",
-      country: "United Kingdom",
-      institution: "University of Cambridge",
-      area: "Edge-based Intelligent Video Analytics, Hyperspectral Image Processing.",
-      avatar: "SJ"
+      name: "Dr. Nilanjan Dey",
+      country: "India",
+      institution: "Techno International New Town, Kolkata",
+      area: "Biomedical Imaging, Signal Processing & Intelligent Systems.",
+      avatar: "ND"
     },
     {
-      name: "Dr. Matteo Rossi",
-      country: "Italy",
-      institution: "Politecnico di Milano",
-      area: "High-level VLSI Synthesis, Cryptographic Hardware Implementations.",
-      avatar: "MR"
+      name: "Dr. Nithesh Naik",
+      country: "India",
+      institution: "Manipal Institute of Technology, MAHE, Manipal",
+      area: "Smart Sensors, Materials Science & Nano-manufacturing.",
+      avatar: "NN"
     }
   ],
 
@@ -195,14 +235,6 @@ window.ConferenceData = {
     { category: "Attendee / Co-author", national: "INR 3,000", international: "USD 100", type: "attendee", popular: false }
   ],
 
-  downloads: [
-    { title: "Conference Brochure (PDF)", filename: "ICNVIP-2027_Brochure.pdf", type: "pdf" },
-    { title: "Call For Papers Poster (PDF)", filename: "ICNVIP-2027_CFP.pdf", type: "pdf" },
-    { title: "Paper Word Template (.docx)", filename: "ICNVIP_Word_Template.docx", type: "word" },
-    { title: "Paper LaTeX Template (.zip)", filename: "ICNVIP_LaTeX_Template.zip", type: "archive" },
-    { title: "Registration Form (.docx)", filename: "ICNVIP_Registration_Form.docx", type: "word" },
-    { title: "Poster Presentation Guidelines", filename: "ICNVIP_Poster_Guidelines.pdf", type: "pdf" }
-  ],
 
   faqs: [
     {

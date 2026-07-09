@@ -13,11 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 const NAVIGATION_LINKS = [
   { label: "Home", link: "index.html" },
   { label: "About", link: "about.html" },
+  { label: "Call for Papers", link: "call-for-papers.html" },
   {
     label: "Committee",
     dropdown: [
+      { label: "Chief Patron", link: "patrons.html" },
       { label: "Organizing Committee", link: "committee.html" },
-      { label: "Advisory Board", link: "advisory.html" }
+      { label: "International Advisory Board", link: "advisory.html#international" },
+      { label: "National Advisory Board", link: "advisory.html#national" },
+      { label: "Technical Program Committee", link: "advisory.html#technical" }
     ]
   },
   {
@@ -32,7 +36,6 @@ const NAVIGATION_LINKS = [
   {
     label: "Submission",
     dropdown: [
-      { label: "Call for Papers", link: "call-for-papers.html" },
       { label: "Paper Submission", link: "submission.html" },
       { label: "Registration", link: "registration.html" }
     ]
@@ -40,8 +43,8 @@ const NAVIGATION_LINKS = [
   {
     label: "Resources",
     dropdown: [
-      { label: "Venue & Travel", link: "venue.html" },
-      { label: "Photo Gallery", link: "gallery.html" },
+      { label: "Venue", link: "venue.html" },
+      { label: "Gallery", link: "gallery.html" },
       { label: "Downloads", link: "downloads.html" },
       { label: "FAQs", link: "faq.html" },
       { label: "Contact Us", link: "contact.html" }
@@ -56,13 +59,13 @@ function injectHeader() {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
   // Build Navbar HTML
-  let menuHTML = `<div class="container navbar">
+  let menuHTML = `<div class="container-navbar navbar">
     <!-- Brand Info -->
     <a href="index.html" class="nav-brand">
-      <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="brand-logo" style="width: 2.5rem; height: 2.5rem; object-fit: contain; border-radius: var(--radius-sm);">
+      <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="brand-logo header-logo">
       <div class="brand-text">
         <span class="brand-title">ICNVIP-2027</span>
-        <span class="brand-subtitle">Department of E&TC, BVP COE Pune</span>
+        <span class="brand-subtitle">Department of ECE, BVP COE Pune</span>
       </div>
     </a>
 
@@ -72,17 +75,17 @@ function injectHeader() {
   NAVIGATION_LINKS.forEach(item => {
     if (item.dropdown) {
       // Find if any item in the dropdown is active
-      const hasActiveSub = item.dropdown.some(sub => currentPath === sub.link);
+      const hasActiveSub = item.dropdown.some(sub => currentPath === sub.link.split("#")[0]);
       menuHTML += `
       <li class="nav-item">
         <a href="#" class="nav-link ${hasActiveSub ? 'active' : ''}" onclick="event.preventDefault(); toggleMobileDropdown(this);">
           <span>${item.label}</span>
-          <i class="fa-solid fa-chevron-down" style="font-size: 0.6rem;"></i>
+          <i class="fa-solid fa-chevron-down"></i>
         </a>
         <div class="dropdown-menu">`;
       
       item.dropdown.forEach(sub => {
-        const isSubActive = currentPath === sub.link;
+        const isSubActive = currentPath === sub.link.split("#")[0];
         menuHTML += `<a href="${sub.link}" class="dropdown-link ${isSubActive ? 'active' : ''}">${sub.label}</a>`;
       });
       menuHTML += `</div></li>`;
@@ -123,9 +126,9 @@ function injectFooter() {
     <div class="footer-grid">
       <!-- About -->
       <div class="footer-column">
-        <div class="nav-brand" style="margin-bottom: 0.5rem;">
-          <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="brand-logo" style="width: 10rem; height: 10rem; object-fit: contain; border-radius: var(--radius-sm);">
-          <span class="brand-title" style="font-size: 1.25rem;">ICNVIP-2027</span>
+        <div class="nav-brand">
+          <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="brand-logo footer-logo">
+          <span class="brand-title">ICNVIP-2027</span>
         </div>
         <p class="footer-about-text">
           International Conference on Nanoelectronics, VLSI and Image Processing. Promoting research innovation in semiconductor circuits and intelligence engines.
@@ -170,15 +173,15 @@ function injectFooter() {
       <!-- Downloads & Newsletter -->
       <div class="footer-column">
         <h4 class="footer-title">Downloads & News</h4>
-        <div class="footer-links" style="margin-bottom: 1rem;">
+        <div class="footer-links footer-links-group">
           <a href="downloads.html">Conference Brochure</a>
           <a href="downloads.html">IEEE Word Template</a>
           <a href="downloads.html">LaTeX Template</a>
         </div>
-        <h4 class="footer-title" style="margin-bottom: 0.25rem;">Newsletter</h4>
+        <h4 class="footer-title newsletter-title">Newsletter</h4>
         <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to newsletter successfully!'); this.reset();">
           <input type="email" class="newsletter-input" placeholder="Your email address" required>
-          <button type="submit" class="btn btn-sm btn-primary" style="padding: 0.45rem 0.75rem;"><i class="fa-solid fa-paper-plane"></i></button>
+          <button type="submit" class="btn btn-sm btn-primary newsletter-submit-btn"><i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>
@@ -210,7 +213,7 @@ function injectSubpageHero() {
   let html = `<div class="container">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs">
-      <a href="${parentLink}"><i class="fa-solid fa-house" style="font-size: 0.75rem; margin-right: 0.25rem;"></i>${parent}</a>
+      <a href="${parentLink}"><i class="fa-solid fa-house"></i>${parent}</a>
       <span class="breadcrumbs-sep"><i class="fa-solid fa-chevron-right"></i></span>
       <span class="breadcrumbs-current">${title}</span>
     </div>
@@ -238,6 +241,17 @@ function setupMobileNavToggle() {
       icon.className = "fa-solid fa-bars";
     }
   });
+
+  const links = menuList.querySelectorAll("a");
+  links.forEach(link => {
+    if (!link.getAttribute("onclick")) {
+      link.addEventListener("click", () => {
+        menuList.classList.remove("active");
+        const icon = toggleBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
+      });
+    }
+  });
 }
 
 function toggleMobileDropdown(anchor) {
@@ -246,15 +260,11 @@ function toggleMobileDropdown(anchor) {
   const item = anchor.nextElementSibling;
   if (item && item.classList.contains("dropdown-menu")) {
     item.classList.toggle("active");
-    const icon = anchor.querySelector(".fa-chevron-down");
-    if (item.classList.contains("active")) {
-      icon.style.transform = "rotate(180deg)";
-    } else {
-      icon.style.transform = "none";
-    }
+    anchor.classList.toggle("dropdown-active");
   }
 }
 
 function setupActiveStates() {
   // Extra safety checks for navigation link clicks or redirects
 }
+

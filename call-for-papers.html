@@ -16,48 +16,198 @@
        data-subtitle="Submit original manuscripts highlighting novel semiconductor modeling, low-power chip synthesis, and visual intelligence networks.">
   </div>
 
-  <main class="container section" style="display: flex; flex-direction: column; gap: 3rem;">
-    <!-- Introduction -->
+  <main class="container section main-layout-gap-3">
+    <!-- About Conference -->
     <section class="card fade-up">
-      <h3 style="font-weight: 800; margin-bottom: 1rem;">Submission Overview</h3>
-      <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
-        ICNVIP-2027 invites academic researchers, scientists, and engineers to submit their original technical manuscripts for peer-review. Submissions must present novel scientific contributions and must not be under review elsewhere.
+      <h3 class="section-title-sm">About Conference</h3>
+      <p class="text-muted p-muted-lg">
+        The International Conference on Nanoelectronics, VLSI, and Image Processing(ICNVIP-2027) aims to provide a premier global platform for researchers, academicians, industry professionals, and innovators to present and exchange groundbreaking ideas, original research, and technological advancements across interdisciplinary domains of modern electronics and intelligent computing.
+        The scope of the conference encompasses a broad range of cutting-edge topics organized across three core technical areas. In the domain of Nanotechnology and Nanoelectronics, the conference covers nanomaterials for electronic applications, advanced fabrication and characterization techniques, quantum technologies, optoelectronics, and wearable and flexible electronic devices. In the area of VLSI Design and Embedded Systems, it addresses low-power and high-performance circuit design, FPGA and SoC technologies, AI hardware accelerators, and neuromorphic computing architectures. In the field of Signal Processing and Image Processing, the conference explores computer vision, machine learning in imaging systems, biomedical imaging, and intelligent signal analysis.
+        By bringing together diverse perspectives from academia and industry, the conference seeks to foster meaningful collaboration, inspire high-quality research contributions, and accelerate innovation in next-generation electronic and computational technologies. It serves as a dedicated forum for addressing current challenges and unlocking future opportunities at the intersection of nanoelectronics, intelligent systems, and advanced imaging technologies.
+
       </p>
     </section>
 
-    <!-- Scope and Guidelines Grid -->
-    <div class="grid-2">
-      <!-- Scope -->
-      <section class="card fade-up" style="gap: 1rem;">
-        <h3 style="font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;"><i class="fa-solid fa-graduation-cap text-blue-500"></i> Scope & Tracks</h3>
-        <p class="text-muted" style="font-size: 0.8rem; line-height: 1.5;">
-          The conference covers a broad scientific array across Nanoelectronics (Quantum spin models), VLSI design (Analog and Mixed-signal circuits), and Signal/Image analysis frameworks.
-        </p>
-        <a href="tracks.html" class="btn btn-sm btn-outline" style="align-self: flex-start;">Explore Program Tracks</a>
-      </section>
-
-      <!-- Formatting Guidelines -->
-      <section class="card fade-up" style="gap: 1rem;">
-        <h3 style="font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;"><i class="fa-solid fa-list-check text-blue-500"></i> Formatting Guidelines</h3>
-        <p class="text-muted" style="font-size: 0.8rem; line-height: 1.5;">
-          All submissions must fit the template models. Initial papers must be submitted without author names (double-blind review mechanism) with a maximum count of 6 pages.
-        </p>
-        <a href="downloads.html" class="btn btn-sm btn-outline" style="align-self: flex-start;">Download Paper Template</a>
-      </section>
-    </div>
-
-    <!-- Author Instructions -->
-    <section class="card fade-up" style="gap: 1.5rem;">
-      <h3 style="font-weight: 800; font-size: 1.25rem;">Plagiarism and Review Criteria</h3>
-      <ul style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted); list-style-type: disc; padding-left: 1.25rem;">
-        <li>All papers are scanned using official anti-plagiarism tools (similarity index must not exceed 15%).</li>
-        <li>Peer-review comments will guide corrections, managed by the Technical Program Committee.</li>
-        <li>Final camera-ready papers require a signed copyright form for official book publication.</li>
-      </ul>
+    <!-- Peer Review Process -->
+    <section class="card fade-up card-gap-1-5">
+      <h3 class="section-subtitle-large">Peer Review Process</h3>
+      <p class="text-muted p-muted-md">
+        ICNVIP 2027 will maintain a rigorous peer review process to ensure the quality, originality, and relevance of the accepted submissions. The process is as follows:
+      </p>
       
-      <div style="display: flex; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; margin-top: 0.5rem;">
-        <a href="submission.html" class="btn btn-primary">Submit Paper Now</a>
-        <a href="downloads.html" class="btn btn-outline">Conference Flyer</a>
+      <div class="table-grid-container" style="margin-top: 1.5rem;">
+        <div class="table-grid-header step-grid-row">
+          <div>Step</div>
+          <div>Description</div>
+        </div>
+        
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">1</div>
+          <div>
+            <strong>Initial Screening:</strong> The plagiarism detection software Turnitin will initially screen all the submitted manuscripts. Only the paper that passes the accepted limit of the similarity index will be forwarded for review. The accepted similarity percentage for this conference is 10% (excluding references/bibliography and all other sources). The paper has to be checked for similarity index with a word count of 3 in the setting. If any paper is found to have a high similarity index, then the accepted limit mentioned above will be outright rejected without sending it out for review. Also, if the paper is found to be plagiarized at any stage during or after publication, it will be retracted immediately.
+          </div>
+        </div>
+        
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">2</div>
+          <div>
+            <strong>Assignment to Reviewers:</strong> Manuscripts that pass the initial screening will be assigned to a minimum of two reviewers with expertise in the relevant fields. Reviewers are selected from the Program Committee and external subject-matter experts to ensure a balanced and unbiased evaluation.
+          </div>
+        </div>
+
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">3</div>
+          <div>
+            <strong>Peer Review:</strong> ICNVIP 2027 will follow a double-blind peer review process. Reviewers will evaluate the manuscript based on:
+            <ul class="list-bullet-muted" style="margin-top: 0.5rem; font-size: 0.85rem;">
+              <li>Originality and significance of the research</li>
+              <li>Technical quality and soundness</li>
+              <li>Relevance to conference themes</li>
+              <li>Clarity and organization of the presentation</li>
+              <li>Contribution to the field</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">4</div>
+          <div>
+            <strong>Reviewer Feedback:</strong> Reviewers provide detailed comments, suggestions, and recommendations (accept, minor revisions, major revisions, or reject). Authors receive this feedback to improve their work as necessary.
+          </div>
+        </div>
+
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">5</div>
+          <div>
+            <strong>Decision Making:</strong> Based on the reviewers’ recommendations and comments, the Program Chairs will make the final decision on acceptance, revision, or rejection of each manuscript. In cases of conflicting reviews, a third reviewer or the Program Chairs may provide additional input.
+          </div>
+        </div>
+
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">6</div>
+          <div>
+            <strong>Revision and Resubmission:</strong> If revisions are required, authors must submit the revised manuscript within the given timeline. Revised submissions are reviewed to ensure all concerns raised by the reviewers have been adequately addressed.
+          </div>
+        </div>
+
+        <div class="table-grid-row-bordered step-grid-row">
+          <div style="font-weight: 700; color: var(--secondary);">7</div>
+          <div>
+            <strong>Final Acceptance and Notification:</strong> Accepted manuscripts are notified to the authors, and the final version is requested for inclusion in the conference proceedings. Authors must ensure compliance with formatting and copyright guidelines.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Tracks -->
+    <section class="card fade-up card-gap-1-5">
+      <h3 class="section-subtitle-large">Conference Tracks</h3>
+      <div class="grid-3" style="margin-top: 1rem;">
+        <!-- Track 1 -->
+        <div class="scope-track-block">
+          <div class="scope-track-title text-blue-500">
+            <i class="fa-solid fa-microchip"></i>
+            <span>1. Nanoelectronics & Nano Devices</span>
+          </div>
+          <ul class="scope-track-list">
+            <li>• Nanomaterials for Electronic Applications</li>
+            <li>• Nanomaterial Fabrication Techniques & Characterization</li>
+            <li>• Wearable and Flexible Nanoelectronic Devices</li>
+            <li>• Quantum & Emerging Technologies</li>
+            <li>• Optoelectronics & Photonic Devices</li>
+          </ul>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="scope-track-block">
+          <div class="scope-track-title text-blue-500">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>2. VLSI Design & Embedded Systems</span>
+          </div>
+          <ul class="scope-track-list">
+            <li>• Low Power and High Performance Circuits</li>
+            <li>• Analog, Digital & Mixed Signal Design</li>
+            <li>• FPGA, ASIC & System-on-Chip (SoC)</li>
+          </ul>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="scope-track-block">
+          <div class="scope-track-title text-blue-500">
+            <i class="fa-solid fa-wave-square"></i>
+            <span>3. Signal Processing & Image Processing</span>
+          </div>
+          <ul class="scope-track-list">
+            <li>• Computer Vision & Pattern Recognition</li>
+            <li>• Machine Learning in Imaging Systems</li>
+            <li>• Biomedical Imaging & Applications</li>
+            <li>• AI Hardware & Neuromorphic Computing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="card fade-up card-gap-1-5">
+      <h3 class="section-subtitle-large">Important Dates</h3>
+      <div class="table-grid-container" style="margin-top: 1.5rem;">
+        <div class="table-grid-header dates-grid-row">
+          <div>Milestone</div>
+          <div>Date</div>
+        </div>
+        
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Call for Papers</div>
+          <div class="meta-value-semibold">30th December, 2026</div>
+        </div>
+        
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Paper Submission Deadline</div>
+          <div class="meta-value-semibold text-blue-500">20th April, 2027</div>
+        </div>
+
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Acceptance Notification</div>
+          <div class="meta-value-semibold">5th June, 2027</div>
+        </div>
+
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Registration Deadline</div>
+          <div class="meta-value-semibold">20th June, 2027</div>
+        </div>
+
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Camera-Ready Paper</div>
+          <div class="meta-value-semibold">27th June, 2027</div>
+        </div>
+
+        <div class="table-grid-row-bordered dates-grid-row">
+          <div>Conference Dates</div>
+          <div class="meta-value-semibold">29th - 30th July 2027</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Submission Guidelines -->
+    <section class="card fade-up card-gap-1-5">
+      <h3 class="section-subtitle-large">Paper Submission Guidelines</h3>
+      <p class="text-muted p-muted-md">
+        All submissions will be handled electronically using Microsoft’s CMT platform. Authors are hereby instructed not to submit any paper via email directly.
+      </p>
+      <p class="text-muted p-muted-md">
+        Download the Word/ LaTeX template from the link below and submit your manuscript as per the template within the standard page limit of <strong>10 pages</strong> only.
+      </p>
+      
+      <div class="card-footer-flex" style="margin-top: 1.5rem;">
+        <button onclick="alert('Redirecting to CMT submission portal: https://cmt3.research.microsoft.com/ICNVIP2027');" class="btn btn-primary">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Submit via CMT Portal
+        </button>
+        <a href="downloads.html" class="btn btn-outline">
+          <i class="fa-regular fa-file-word"></i> Download Templates
+        </a>
+        <a href="https://rrraiconference.com/instruction-for-authors/" target="_blank" class="btn btn-outline">
+          <i class="fa-solid fa-circle-info"></i> Instruction for Authors
+        </a>
       </div>
     </section>
   </main>

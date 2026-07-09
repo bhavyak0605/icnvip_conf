@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venue & Accommodation | ICNVIP-2027</title>
+  <title>Venue | ICNVIP-2027</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,18 +12,18 @@
   <header id="header-placeholder"></header>
 
   <div id="hero-banner-placeholder" 
-       data-title="Venue & Accommodation" 
+       data-title="Venue" 
        data-subtitle="Explore location maps, travel guides, transit recommendations, nearby hotels, and local Pune attractions.">
   </div>
 
-  <main class="container section" style="display: flex; flex-direction: column; gap: 4rem;">
+  <main class="container section main-layout-gap-4">
     
     <!-- Venue & Map -->
     <section class="venue-layout">
       <!-- Venue info card -->
       <div class="card fade-up">
         <div>
-          <h3 style="font-weight: 800; margin-bottom: 1rem;"><i class="fa-solid fa-map-pin text-blue-500" style="margin-right: 0.5rem;"></i> Conference Venue</h3>
+          <h3 class="section-title-sm"><i class="fa-solid fa-map-pin text-blue-500"></i> Conference Venue</h3>
           <p class="venue-inst-title">Bharati Vidyapeeth (Deemed to be University)</p>
           <p class="venue-inst-sub">College of Engineering, Pune</p>
           <p class="text-muted venue-inst-desc">
@@ -35,67 +35,12 @@
 
       <!-- Map Placeholder -->
       <div class="contact-map-placeholder fade-up map-large">
-        <i class="fa-solid fa-map-location-dot" style="font-size: 3rem; color: #CBD5E1; margin-bottom: 1rem;"></i>
-        <span style="font-weight: 700; color: var(--text-dark);">Google Map Visual Reference</span>
+        <i class="fa-solid fa-map-location-dot map-placeholder-icon"></i>
+        <span class="map-placeholder-title">Google Map Visual Reference</span>
         <span class="text-muted">Pune-Satara Rd, Dhankawadi, Pune, Maharashtra 411043</span>
       </div>
     </section>
 
-    <!-- Transportation and Transit -->
-    <section class="card fade-up card-gap">
-      <h3 style="font-weight: 800; font-size: 1.25rem;">Transportation & Travel Information</h3>
-      <div class="transport-layout">
-        <!-- Airport -->
-        <div class="transport-card">
-          <i class="fa-solid fa-plane-departure"></i>
-          <div>
-            <h5>By Air (Pune Airport)</h5>
-            <p class="text-muted">
-              Pune International Airport (PNQ) is approximately 18 km from the campus. Taxis and app-based cabs (Uber/Ola) are easily available.
-            </p>
-          </div>
-        </div>
-        <!-- Railway -->
-        <div class="transport-card">
-          <i class="fa-solid fa-train"></i>
-          <div>
-            <h5>By Rail (Pune Station)</h5>
-            <p class="text-muted">
-              Pune Junction Railway Station is about 9 km from the university. Regular local buses and auto-rickshaws connect to the Satara Road campus.
-            </p>
-          </div>
-        </div>
-        <!-- Local cabs -->
-        <div class="transport-card">
-          <i class="fa-solid fa-car"></i>
-          <div>
-            <h5>Local Auto-Rickshaws</h5>
-            <p class="text-muted">
-              Pune has extensive local bus transit (PMPML) and auto-rickshaws. Mention 'Bharati Vidyapeeth Dhankawadi Campus' to drivers.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Accommodation / Hotels List -->
-    <section>
-      <div class="section-header section-header-left">
-        <h3>Recommended Hotels & Lodgings</h3>
-        <p class="text-muted">Below are high-quality accommodation choices offering special tariffs for ICNVIP-2027 delegates.</p>
-      </div>
-      <div class="grid-4" id="venue-hotels-container">
-        <!-- Rendered by main.js -->
-      </div>
-    </section>
-
-    <!-- Local Attractions -->
-    <section class="card fade-up" style="gap: 1.5rem;">
-      <h3 style="font-weight: 800; font-size: 1.25rem;">Explore Pune (Local Attractions)</h3>
-      <p class="text-muted" style="font-size: 0.85rem; line-height: 1.6;">
-        Pune, the cultural capital of Maharashtra, offers historical monuments and scenic locations. Delegates can visit Shaniwar Wada Palace, Aga Khan Palace, Sinhagad Fort, or shop at the vibrant Laxmi Road market.
-      </p>
-    </section>
   </main>
 
   <footer id="footer-placeholder"></footer>

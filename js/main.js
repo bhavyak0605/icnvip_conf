@@ -2,15 +2,13 @@
 // Handles all dynamic content generation, interactive features, scroll animations, and modal windows.
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize viewport intersection observer for scroll animation triggers
-  initScrollAnimations();
-
   // Load and render components based on current page element matches
   runCountdownTimer();
   renderAnnouncements();
   renderStatisticsGrid();
   renderSponsorLogos();
   renderCommitteeLists();
+  renderPatronsLists();
   renderAdvisoryBoards();
   renderSpeakerCards();
   renderTechnicalTracks();
@@ -22,14 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHotelsList();
   setupContactFormHandler();
   setupBackToTopButton();
+
+  // Initialize viewport intersection observer for scroll animation triggers
+  initScrollAnimations();
 });
 
-// ==========================================
+
 // 1. SCROLL INTERSECTION OBSERVER ANIMATION
-// ==========================================
+
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(".fade-up, .fade-in, .scale-in");
-  
+
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -50,9 +51,9 @@ function initScrollAnimations() {
   }
 }
 
-// ==========================================
+
 // 2. COUNTDOWN TIMER
-// ==========================================
+
 function runCountdownTimer() {
   const timerGrid = document.getElementById("countdown-grid-container");
   if (!timerGrid || !window.ConferenceData) return;
@@ -104,9 +105,9 @@ function runCountdownTimer() {
   const intervalId = setInterval(updateTimer, 1000);
 }
 
-// ==========================================
+
 // 3. STATISTICAL COUNTER INCREMENTER
-// ==========================================
+
 function renderStatisticsGrid() {
   const container = document.getElementById("stats-grid-container");
   if (!container || !window.ConferenceData) return;
@@ -132,7 +133,7 @@ function renderStatisticsGrid() {
         }
       });
     }, { threshold: 0.5 });
-    
+
     counterObserver.observe(container);
   } else {
     triggerCounters();
@@ -148,7 +149,7 @@ function renderStatisticsGrid() {
       let current = 0;
       const duration = 1200; // Total duration in ms
       const stepTime = Math.max(Math.floor(duration / targetNum), 15);
-      
+
       const timer = setInterval(() => {
         current += Math.ceil(targetNum / 30);
         if (current >= targetNum) {
@@ -162,9 +163,8 @@ function renderStatisticsGrid() {
   }
 }
 
-// ==========================================
 // 4. ANNOUNCEMENTS
-// ==========================================
+
 function renderAnnouncements() {
   const container = document.getElementById("announcements-sidebar");
   if (!container || !window.ConferenceData) return;
@@ -183,9 +183,8 @@ function renderAnnouncements() {
   container.innerHTML = html;
 }
 
-// ==========================================
+
 // 5. SPONSOR LOGOS
-// ==========================================
 function renderSponsorLogos() {
   const container = document.getElementById("sponsors-list-container");
   if (!container || !window.ConferenceData) return;
@@ -202,12 +201,11 @@ function renderSponsorLogos() {
   container.innerHTML = html;
 }
 
-// ==========================================
 // 6. COMMITTEE SECTIONS
-// ==========================================
+
 function renderCommitteeLists() {
   const targetRoles = ["honorary", "general", "conference", "organizing", "finance", "publication", "publicity", "web"];
-  
+
   targetRoles.forEach(role => {
     const grid = document.getElementById(`committee-${role}-grid`);
     if (!grid || !window.ConferenceData.committee[role]) return;
@@ -216,7 +214,6 @@ function renderCommitteeLists() {
     window.ConferenceData.committee[role].forEach(member => {
       html += `
         <div class="card committee-card card-hover fade-up">
-          <div class="member-avatar">${member.avatar}</div>
           <h4 class="member-name font-poppins font-bold">${member.name}</h4>
           <span class="member-designation">${member.designation}</span>
           <p class="member-institution">${member.institution}</p>
@@ -227,12 +224,32 @@ function renderCommitteeLists() {
   });
 }
 
-// ==========================================
+function renderPatronsLists() {
+  const patronRoles = ["inspiration", "chief"];
+
+  patronRoles.forEach(role => {
+    const grid = document.getElementById(`patrons-${role}-grid`);
+    if (!grid || !window.ConferenceData.committee.patrons || !window.ConferenceData.committee.patrons[role]) return;
+
+    let html = "";
+    window.ConferenceData.committee.patrons[role].forEach(member => {
+      html += `
+        <div class="card committee-card card-hover fade-up">
+          <h4 class="member-name font-poppins font-bold">${member.name}</h4>
+          <span class="member-designation">${member.designation}</span>
+          <p class="member-institution">${member.institution}</p>
+        </div>
+      `;
+    });
+    grid.innerHTML = html;
+  });
+}
+
+
 // 7. ADVISORY BOARDS
-// ==========================================
 function renderAdvisoryBoards() {
   const subBoards = ["international", "national", "technical"];
-  
+
   subBoards.forEach(board => {
     const grid = document.getElementById(`advisory-${board}-grid`);
     if (!grid || !window.ConferenceData.advisory[board]) return;
@@ -256,9 +273,7 @@ function renderAdvisoryBoards() {
   });
 }
 
-// ==========================================
 // 8. KEYNOTE SPEAKERS CARDS
-// ==========================================
 function renderSpeakerCards() {
   const container = document.getElementById("speakers-cards-container");
   if (!container || !window.ConferenceData) return;
@@ -288,9 +303,8 @@ function renderSpeakerCards() {
   container.innerHTML = html;
 }
 
-// ==========================================
 // 9. TECHNICAL TRACKS (Tracks & Home Preview)
-// ==========================================
+
 function renderTechnicalTracks() {
   const container = document.getElementById("technical-tracks-container");
   if (!container || !window.ConferenceData) return;
@@ -318,9 +332,7 @@ function renderTechnicalTracks() {
   container.innerHTML = html;
 }
 
-// ==========================================
 // 10. IMPORTANT DATES TIMELINE
-// ==========================================
 function renderImportantDatesTimeline() {
   const container = document.getElementById("dates-timeline-container");
   if (!container || !window.ConferenceData) return;
@@ -354,9 +366,8 @@ function renderImportantDatesTimeline() {
   container.innerHTML = html;
 }
 
-// ==========================================
 // 11. REGISTRATION FEES CARDS
-// ==========================================
+
 function renderRegistrationFees() {
   const container = document.getElementById("pricing-cards-container");
   if (!container || !window.ConferenceData) return;
@@ -393,9 +404,8 @@ function renderRegistrationFees() {
   container.innerHTML = html;
 }
 
-// ==========================================
 // 12. DOWNLOAD CARDS
-// ==========================================
+
 function renderDownloadsCards() {
   const container = document.getElementById("downloads-grid-container");
   if (!container || !window.ConferenceData) return;
@@ -436,9 +446,9 @@ function renderDownloadsCards() {
   container.innerHTML = html;
 }
 
-// ==========================================
+
 // 13. FAQs ACCORDION (Click to Toggle)
-// ==========================================
+
 function renderFAQsAccordion() {
   const container = document.getElementById("faqs-accordion-container");
   if (!container || !window.ConferenceData) return;
@@ -463,7 +473,7 @@ function renderFAQsAccordion() {
 function toggleFAQ(button) {
   const item = button.parentElement;
   const answer = button.nextElementSibling;
-  
+
   // Close other FAQ items
   const allItems = document.querySelectorAll(".faq-item");
   allItems.forEach(otherItem => {
@@ -481,9 +491,8 @@ function toggleFAQ(button) {
   }
 }
 
-// ==========================================
 // 14. MASONRY GALLERY & LIGHTBOX MODAL
-// ==========================================
+
 function renderGalleryGrid() {
   const container = document.getElementById("gallery-masonry-container");
   if (!container || !window.ConferenceData) return;
@@ -512,7 +521,7 @@ function renderGalleryGrid() {
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox || e.target.classList.contains("lightbox-close") || e.target.closest(".lightbox-close")) {
         lightbox.classList.remove("active");
-        document.body.style.overflow = "initial";
+        document.body.classList.remove("modal-open");
       }
     });
   }
@@ -529,9 +538,9 @@ function filterGallery(btn, category) {
   items.forEach(item => {
     const cat = item.getAttribute("data-cat");
     if (category === "all" || cat === category) {
-      item.style.display = "block";
+      item.classList.remove("hidden");
     } else {
-      item.style.display = "none";
+      item.classList.add("hidden");
     }
   });
 }
@@ -545,12 +554,11 @@ function openLightbox(title, caption, category) {
   lightbox.querySelector("#lightbox-desc").innerText = caption;
 
   lightbox.classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("modal-open");
 }
 
-// ==========================================
+
 // 15. HOTELS LIST (Venue Page)
-// ==========================================
 function renderHotelsList() {
   const container = document.getElementById("venue-hotels-container");
   if (!container || !window.ConferenceData) return;
@@ -574,9 +582,8 @@ function renderHotelsList() {
   container.innerHTML = html;
 }
 
-// ==========================================
+
 // 16. CONTACT FORM SUBMISSION VALIDATOR
-// ==========================================
 function setupContactFormHandler() {
   const form = document.getElementById("contact-form-element");
   if (!form) return;
@@ -598,9 +605,8 @@ function setupContactFormHandler() {
   });
 }
 
-// ==========================================
+
 // 17. BACK TO TOP BUTTON
-// ==========================================
 function setupBackToTopButton() {
   const btn = document.createElement("button");
   btn.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
