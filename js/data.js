@@ -220,8 +220,8 @@ window.ConferenceData = {
   ],
 
   importantDates: [
-    { label: "Full Paper Submission Open", date: "July 10, 2026", status: "passed", icon: "paper-plane" },
-    { label: "Paper Submission Deadline", date: "November 15, 2026", status: "active", icon: "calendar-plus" },
+    { label: "Full Paper Submission Open", date: "August 10, 2026", status: "passed", icon: "paper-plane" },
+    { label: "Paper Submission Deadline", date: "December 15, 2026", status: "active", icon: "calendar-plus" },
     { label: "Notification of Acceptance", date: "January 15, 2027", status: "upcoming", icon: "envelope-open-text" },
     { label: "Camera-Ready Submission", date: "February 15, 2027", status: "upcoming", icon: "file-upload" },
     { label: "Author Registration Deadline", date: "March 01, 2027", status: "upcoming", icon: "credit-card" },

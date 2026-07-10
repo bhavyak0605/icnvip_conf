@@ -2913,6 +2913,17 @@ textarea.form-input {
   padding-left: 1.25rem;
 }
 
+.instruction-list {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.instruction-list li {
+  color: #334155;
+}
+
+
 .card-footer-flex {
   display: flex;
   gap: 1rem;

@@ -24,10 +24,10 @@ const NAVIGATION_LINKS = [
     label: "For Author",
     dropdown:[
       { label: "Call for Papers", link: "call-for-papers.html" },
-      { label: "Instructions for Authors", link: ""},
+      { label: "Instructions for Authors", link: "instruction.html"},
       { label: "Timeline", link: "dates.html"},
       { label: "Registration", link: "registration.html"},
-      { label: "Program Schedule", link: ""}
+      { label: "Program Schedule", link: "schedule.html"}
 
     ]
   },
