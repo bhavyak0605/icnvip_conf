@@ -205,7 +205,7 @@ function renderSponsorLogos() {
 // 6. COMMITTEE SECTIONS
 
 function renderCommitteeLists() {
-  const targetRoles = ["honorary", "general", "conference", "organizing", "finance", "publication", "publicity", "web"];
+  const targetRoles = ["honorary", "general", "generalco", "conference", "organizing", "finance", "publication", "publicity", "web"];
 
   targetRoles.forEach(role => {
     const grid = document.getElementById(`committee-${role}-grid`);
@@ -628,9 +628,9 @@ function setupBackToTopButton() {
   });
 }
 
-// 18. HERO BACKGROUND IMAGE SLIDER
+// 18. HERO IMAGE SLIDER (right panel)
 function setupHeroSlider() {
-  const slides = document.querySelectorAll(".hero-bg-slider .slide");
+  const slides = document.querySelectorAll(".hero-image-slider .hero-slide");
   if (slides.length === 0) return;
 
   let currentIndex = 0;

@@ -16,8 +16,9 @@ const NAVIGATION_LINKS = [
     label: "About",
     dropdown: [
       { label: "ICNVIP 2027", link: "about.html#about-icnvip" },
-      { label: "About BVDU", link: "about.html#about-bvdu" },
-      { label: "About BVUCOE", link: "about.html#about-bvucoe" }
+      { label: "About BVDU", link: "abt-bvdu.html#about-bvdu" },
+      { label: "About BVUCOE", link: "abt-bvdu.html#about-bvucoe" },
+      { label: "Contact Us", link: "contact.html" }
     ]
   },
   {
@@ -56,16 +57,16 @@ const NAVIGATION_LINKS = [
       { label: "Registration", link: "registration.html" }
     ]
   },
-  {
-    label: "Resources",
-    dropdown: [
-      { label: "Venue", link: "venue.html" },
-      { label: "Gallery", link: "gallery.html" },
-      { label: "Downloads", link: "downloads.html" },
-      { label: "FAQs", link: "faq.html" },
-      { label: "Contact Us", link: "contact.html" }
-    ]
-  }
+  // {
+  //   label: "Resources",
+  //   dropdown: [
+  //     { label: "Venue", link: "venue.html" },
+  //     { label: "Gallery", link: "gallery.html" },
+  //     { label: "Downloads", link: "downloads.html" },
+  //     { label: "FAQs", link: "faq.html" },
+  //     { label: "Contact Us", link: "contact.html" }
+  //   ]
+  // }
 ];
 
 function injectHeader() {
@@ -98,15 +99,16 @@ function injectHeader() {
       <div class="container brand-bar-content">
         <!-- University & College Logos on Left -->
         <div class="left-logos">
-          <img src="img/BVDU-logo.png" alt="BVDU Logo" class="uni-logo">
-          <img src="img/bvucoep.jpg" alt="BVUCOE Logo" class="clg-logo">
+          <img src="img/BVDU-logo2.png" alt="BVDU Logo" class="uni-logo">
+          <img src="img/bvuvoep-logo.jpeg" alt="BVUCOE Logo" class="clg-logo">
         </div>
         
         <!-- Big Conference Logo in Center -->
         <div class="center-logo">
           <a href="index.html" class="conf-logo-link">
-            <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="conf-logo">
+            <img src="img/conf-logo2.png" alt="ICNVIP-2027 Logo" class="conf-logo">
           </a>
+          <p class="conf-logo-subtitle">International Conference on Nanoelectronics, VLSI and Image Processing</p>
         </div>
         
         <!-- Empty Spacer on Right for layout symmetry -->
