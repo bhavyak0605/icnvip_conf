@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Dropdown-based navigation structure to organize 16 pages cleanly without clutter
 const NAVIGATION_LINKS = [
-  { label: "Home", link: "index.html" },
+  { label: "Home", link: "/" },
   {
     label: "About",
     dropdown: [
@@ -69,11 +69,21 @@ const NAVIGATION_LINKS = [
   // }
 ];
 
+// Normalizes the current URL path so nav-active-state matching works
+// whether the page is served at "/", "/index.html", or "/some-page.html"
+function getCurrentPath() {
+  const pathname = window.location.pathname;
+  if (pathname === "/" || pathname === "" || pathname.endsWith("/index.html")) {
+    return "/";
+  }
+  return pathname.split("/").pop();
+}
+
 function injectHeader() {
   const container = document.getElementById("header-placeholder");
   if (!container) return;
 
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const currentPath = getCurrentPath();
 
   // Use dynamically retrieved phone and email if window.ConferenceData is available
   const phone = window.ConferenceData ? window.ConferenceData.conferenceInfo.phone : "+91-20-24107300";
@@ -105,7 +115,7 @@ function injectHeader() {
         
         <!-- Big Conference Logo in Center -->
         <div class="center-logo">
-          <a href="index.html" class="conf-logo-link">
+          <a href="/" class="conf-logo-link">
             <img src="img/conf-logo2.png" alt="ICNVIP-2027 Logo" class="conf-logo">
           </a>
           <p class="conf-logo-subtitle">International Conference on Nanoelectronics, VLSI and Image Processing</p>
@@ -201,7 +211,7 @@ function injectFooter() {
       <div class="footer-column">
         <h4 class="footer-title">Quick Links</h4>
         <div class="footer-links">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <a href="about.html">About Conference</a>
           <a href="speakers.html">Keynote Speakers</a>
           <a href="tracks.html">Technical Tracks</a>
@@ -258,7 +268,7 @@ function injectSubpageHero() {
   const title = container.getAttribute("data-title") || "Conference Information";
   const subtitle = container.getAttribute("data-subtitle") || "ICNVIP-2027 Academic Conference Details";
   const parent = container.getAttribute("data-parent") || "Home";
-  const parentLink = container.getAttribute("data-parent-link") || "index.html";
+  const parentLink = container.getAttribute("data-parent-link") || "/";
 
   // Build Hero + Breadcrumbs HTML
   let html = `<div class="container">
@@ -317,7 +327,7 @@ function toggleMobileDropdown(anchor) {
 
 function setupActiveStates() {
   const updateDropdownActiveStates = () => {
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const currentPath = getCurrentPath();
     const dropdownLinks = document.querySelectorAll(".dropdown-link");
     
     dropdownLinks.forEach(link => {
@@ -340,4 +350,3 @@ function setupActiveStates() {
   updateDropdownActiveStates();
   window.addEventListener("hashchange", updateDropdownActiveStates);
 }
-
