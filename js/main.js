@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHotelsList();
   setupContactFormHandler();
   setupBackToTopButton();
+  setupHeroSlider();
 
   // Initialize viewport intersection observer for scroll animation triggers
   initScrollAnimations();
@@ -625,4 +626,19 @@ function setupBackToTopButton() {
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+// 18. HERO BACKGROUND IMAGE SLIDER
+function setupHeroSlider() {
+  const slides = document.querySelectorAll(".hero-bg-slider .slide");
+  if (slides.length === 0) return;
+
+  let currentIndex = 0;
+  slides[currentIndex].classList.add("active");
+
+  setInterval(() => {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }, 4000);
 }

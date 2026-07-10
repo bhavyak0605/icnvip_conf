@@ -10,8 +10,8 @@ window.ConferenceData = {
     institution: "Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune",
     address: "Pune-Satara Road, Dhankawadi, Pune, Maharashtra 411043, India",
     theme: "Advancing Innovation in Nano-scale Semiconductor Devices, low power VLSI systems, and intelligent vision algorithms.",
-    email: "contact@icnvip2027.org",
-    phone: "+91-20-24107300",
+    email: "hvmhetre@bvucoep.edu.in",
+    phone: "+91 9767640673",
     submissionLink: "https://cmt3.research.microsoft.com/ICNVIP2027", // Microsoft CMT portal
     countdownTarget: "2027-03-29T09:00:00"
   },

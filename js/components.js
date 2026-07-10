@@ -12,27 +12,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // Dropdown-based navigation structure to organize 16 pages cleanly without clutter
 const NAVIGATION_LINKS = [
   { label: "Home", link: "index.html" },
-  { label: "About", link: "about.html" },
-  { label: "Call for Papers", link: "call-for-papers.html" },
+  {
+    label: "About",
+    dropdown: [
+      { label: "ICNVIP 2027", link: "about.html#about-icnvip" },
+      { label: "About BVDU", link: "about.html#about-bvdu" },
+      { label: "About BVUCOE", link: "about.html#about-bvucoe" }
+    ]
+  },
+  {
+    label: "For Author",
+    dropdown:[
+      { label: "Call for Papers", link: "call-for-papers.html" },
+      { label: "Instructions for Authors", link: ""},
+      { label: "Timeline", link: "dates.html"},
+      { label: "Registration", link: "registration.html"},
+      { label: "Program Schedule", link: ""}
+
+    ]
+  },
+  // { label: "Call for Papers", link: "call-for-papers.html" },
   {
     label: "Committee",
     dropdown: [
       { label: "Chief Patron", link: "patrons.html" },
       { label: "Organizing Committee", link: "committee.html" },
-      { label: "International Advisory Board", link: "advisory.html#international" },
-      { label: "National Advisory Board", link: "advisory.html#national" },
-      { label: "Technical Program Committee", link: "advisory.html#technical" }
-    ]
-  },
-  {
-    label: "Program",
-    dropdown: [
       { label: "Keynote Speakers", link: "speakers.html" },
-      { label: "Conference Tracks", link: "tracks.html" },
-      { label: "Important Dates", link: "dates.html" },
-      { label: "Publication", link: "publication.html" }
+      { label: "Technical Program Committee", link: "advisory.html" }
     ]
   },
+  // {
+  //   label: "Program",
+  //   dropdown: [
+  //     { label: "Conference Tracks", link: "tracks.html" },
+  //     { label: "Important Dates", link: "dates.html" },
+  //     { label: "Publication", link: "publication.html" }
+  //   ]
+  // },
   {
     label: "Submission",
     dropdown: [
@@ -58,23 +74,60 @@ function injectHeader() {
 
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-  // Build Navbar HTML
-  let menuHTML = `<div class="container-navbar navbar">
-    <!-- Brand Info -->
-    <a href="index.html" class="nav-brand">
-      <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="brand-logo header-logo">
-      <div class="brand-text">
-        <span class="brand-title">ICNVIP-2027</span>
-        <span class="brand-subtitle">Department of ECE, BVP COE Pune</span>
-      </div>
-    </a>
+  // Use dynamically retrieved phone and email if window.ConferenceData is available
+  const phone = window.ConferenceData ? window.ConferenceData.conferenceInfo.phone : "+91-20-24107300";
+  const email = window.ConferenceData ? window.ConferenceData.conferenceInfo.email : "contact@icnvip2027.org";
 
-    <!-- Navigation links -->
-    <ul class="nav-menu" id="nav-menu-list">`;
+  // Build Navbar HTML with three rows: contact bar, brand logo bar, navigation bar
+  let menuHTML = `
+    <!-- Row 1: Top Contact Bar -->
+    <div class="header-top-bar">
+      <div class="container top-bar-content">
+        <div class="top-bar-left">
+          <a href="tel:${phone.replace(/\s+/g, '')}"><i class="fa-solid fa-phone"></i> ${phone}</a>
+          <a href="mailto:${email}"><i class="fa-solid fa-envelope"></i> ${email}</a>
+        </div>
+        <div class="top-bar-right">
+          <span> Bharati Vidyapeeth College of Engineering, Pune</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Brand/Logo Bar -->
+    <div class="header-brand-bar">
+      <div class="container brand-bar-content">
+        <!-- University & College Logos on Left -->
+        <div class="left-logos">
+          <img src="img/BVDU-logo.png" alt="BVDU Logo" class="uni-logo">
+          <img src="img/bvucoep.jpg" alt="BVUCOE Logo" class="clg-logo">
+        </div>
+        
+        <!-- Big Conference Logo in Center -->
+        <div class="center-logo">
+          <a href="index.html" class="conf-logo-link">
+            <img src="img/logo.jpeg" alt="ICNVIP-2027 Logo" class="conf-logo">
+          </a>
+        </div>
+        
+        <!-- Empty Spacer on Right for layout symmetry -->
+        <div class="right-spacer"></div>
+      </div>
+    </div>
+
+    <!-- Row 3: Nav Menu Bar (Sticky) -->
+    <div class="header-nav-bar">
+      <div class="container nav-bar-content">
+        <!-- Toggle button for mobile -->
+        <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Navigation links -->
+        <ul class="nav-menu" id="nav-menu-list">`;
 
   NAVIGATION_LINKS.forEach(item => {
     if (item.dropdown) {
-      // Find if any item in the dropdown is active
+      // Find if any item in the dropdown is active (ignoring fragment hashes)
       const hasActiveSub = item.dropdown.some(sub => currentPath === sub.link.split("#")[0]);
       menuHTML += `
       <li class="nav-item">
@@ -100,17 +153,13 @@ function injectHeader() {
 
   menuHTML += `</ul>
 
-    <!-- CTA buttons -->
-    <div class="nav-actions">
-      <a href="submission.html" class="btn btn-sm btn-outline">Submit Paper</a>
-      <a href="registration.html" class="btn btn-sm btn-primary">Register</a>
-    </div>
-
-    <!-- Toggle button for mobile -->
-    <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>`;
+        <!-- Shifted CTA Buttons in lower navbar -->
+        <div class="nav-actions">
+          <a href="submission.html" class="btn btn-sm btn-primary-nav">Submit Paper</a>
+          <a href="registration.html" class="btn btn-sm btn-accent-nav">Register</a>
+        </div>
+      </div>
+    </div>`;
 
   container.innerHTML = menuHTML;
   container.className = "header-placeholder-container";
@@ -265,6 +314,28 @@ function toggleMobileDropdown(anchor) {
 }
 
 function setupActiveStates() {
-  // Extra safety checks for navigation link clicks or redirects
+  const updateDropdownActiveStates = () => {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    const dropdownLinks = document.querySelectorAll(".dropdown-link");
+    
+    dropdownLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href) return;
+      const hashIdx = href.indexOf("#");
+      const subBase = hashIdx !== -1 ? href.substring(0, hashIdx) : href;
+      const subHash = hashIdx !== -1 ? href.substring(hashIdx) : "";
+      
+      const isSubActive = currentPath === subBase && 
+                          (subHash === "" ? !window.location.hash : window.location.hash === subHash);
+      if (isSubActive) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  };
+
+  updateDropdownActiveStates();
+  window.addEventListener("hashchange", updateDropdownActiveStates);
 }
 
