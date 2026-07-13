@@ -36,8 +36,14 @@ const NAVIGATION_LINKS = [
   {
     label: "Committee",
     dropdown: [
-      { label: "Chief Patron", link: "patrons.html" },
-      { label: "Organizing Committee", link: "committee.html" },
+      { 
+        label: "Chief Patron", 
+        link: "patrons.html",
+        subItems: [
+          { label: "Chief Patron & Inspiration", link: "patrons.html" },
+          { label: "Organizing Committee", link: "patrons.html#committee-sections" }
+        ]
+      },
       { label: "Keynote Speakers", link: "speakers.html" },
       { label: "Technical Program Committee", link: "advisory.html" }
     ]
@@ -93,13 +99,13 @@ function injectHeader() {
   let menuHTML = `
     <!-- Row 1: Top Contact Bar -->
     <div class="header-top-bar">
-      <div class="container top-bar-content">
-        <div class="top-bar-left">
-          <a href="tel:${phone.replace(/\s+/g, '')}"><i class="fa-solid fa-phone"></i> ${phone}</a>
-          <a href="mailto:${email}"><i class="fa-solid fa-envelope"></i> ${email}</a>
-        </div>
-        <div class="top-bar-right">
-          <span> Bharati Vidyapeeth College of Engineering, Pune</span>
+      <div class="container top-bar-content-center">
+        <div class="ticker-wrapper">
+          <div class="ticker-text ticker-animate">
+             <span>Paper Submission Starts Soon!</span>
+            <span>Submit Your Research and be Part of the Conference</span>
+            <span>Paper Submission Starts Soon!</span>
+          </div>
         </div>
       </div>
     </div>
@@ -150,8 +156,24 @@ function injectHeader() {
         <div class="dropdown-menu">`;
       
       item.dropdown.forEach(sub => {
-        const isSubActive = currentPath === sub.link.split("#")[0];
-        menuHTML += `<a href="${sub.link}" class="dropdown-link ${isSubActive ? 'active' : ''}">${sub.label}</a>`;
+        if (sub.subItems) {
+          const isSubActive = currentPath === sub.link.split("#")[0];
+          menuHTML += `
+          <div class="nested-dropdown">
+            <a href="${sub.link}" class="dropdown-link ${isSubActive ? 'active' : ''} nested-trigger">
+              <span>${sub.label}</span>
+              <i class="fa-solid fa-chevron-right" style="font-size: 0.5rem; float: right; margin-top: 4px;"></i>
+            </a>
+            <div class="nested-dropdown-menu">`;
+          sub.subItems.forEach(nested => {
+            const isNestedActive = currentPath === nested.link.split("#")[0];
+            menuHTML += `<a href="${nested.link}" class="dropdown-link nested-link ${isNestedActive ? 'active' : ''}">${nested.label}</a>`;
+          });
+          menuHTML += `</div></div>`;
+        } else {
+          const isSubActive = currentPath === sub.link.split("#")[0];
+          menuHTML += `<a href="${sub.link}" class="dropdown-link ${isSubActive ? 'active' : ''}">${sub.label}</a>`;
+        }
       });
       menuHTML += `</div></li>`;
     } else {

@@ -279,21 +279,30 @@ function renderSpeakerCards() {
   const container = document.getElementById("speakers-cards-container");
   if (!container || !window.ConferenceData) return;
 
+  function getCountryCode(countryName) {
+    const codes = {
+      "portugal": "pt",
+      "australia": "au",
+      "india": "in"
+    };
+    return codes[countryName.toLowerCase()] || "un";
+  }
+
   let html = "";
   window.ConferenceData.speakers.forEach(speaker => {
+    const code = getCountryCode(speaker.country);
     html += `
       <div class="card speaker-card card-hover fade-up">
         <div class="speaker-header">
           <div class="speaker-avatar">${speaker.avatar}</div>
+          <div class="speaker-flag-wrapper">
+            <img src="https://flagcdn.com/w40/${code}.png" alt="${speaker.country} Flag" class="speaker-flag">
+          </div>
           <span class="speaker-country-badge">
-            <i class="fa-solid fa-earth-americas"></i> ${speaker.country}
+            ${speaker.country}
           </span>
           <h3 class="speaker-name font-poppins font-bold">${speaker.name}</h3>
           <span class="speaker-institution">${speaker.institution}</span>
-        </div>
-        <div class="speaker-research">
-          <span class="speaker-research-lbl">Keynote Area</span>
-          <p class="speaker-research-txt">${speaker.area}</p>
         </div>
         <div class="speaker-actions">
           <button onclick="alert('Speaker bio details would open here.')" class="btn btn-sm btn-outline">View Profile</button>

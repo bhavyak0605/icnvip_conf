@@ -225,19 +225,19 @@ window.ConferenceData = {
   ],
 
   importantDates: [
-    { label: "Full Paper Submission Open", date: "August 10, 2026", status: "passed", icon: "paper-plane" },
-    { label: "Paper Submission Deadline", date: "December 15, 2026", status: "active", icon: "calendar-plus" },
-    { label: "Notification of Acceptance", date: "January 15, 2027", status: "upcoming", icon: "envelope-open-text" },
-    { label: "Camera-Ready Submission", date: "February 15, 2027", status: "upcoming", icon: "file-upload" },
-    { label: "Author Registration Deadline", date: "March 01, 2027", status: "upcoming", icon: "credit-card" },
+    { label: "Full Paper Submission Open", date: "September 30, 2026", status: "passed", icon: "paper-plane" },
+    { label: "Paper Submission Deadline", date: "December 31, 2026", status: "active", icon: "calendar-plus" },
+    { label: "Notification of Acceptance", date: "January 31, 2027", status: "upcoming", icon: "envelope-open-text" },
+    { label: "Camera-Ready Submission", date: "February 25, 2027", status: "upcoming", icon: "file-upload" },
+    { label: "Author Registration Deadline", date: "March 05, 2027", status: "upcoming", icon: "credit-card" },
     { label: "Conference Dates", date: "March 29–30, 2027", status: "upcoming", icon: "users" }
   ],
 
   registrationFees: [
-    { category: "Student (UG / PG / PhD)", national: "INR 4,500", international: "USD 150", type: "student", popular: false },
-    { category: "Academician / Researcher", national: "INR 6,500", international: "USD 250", type: "academic", popular: true },
-    { category: "Industry Professional", national: "INR 8,000", international: "USD 350", type: "industry", popular: false },
-    { category: "Attendee / Co-author", national: "INR 3,000", international: "USD 100", type: "attendee", popular: false }
+    { category: "Student (UG / PG / PhD)", national: "INR 10,000", international: "USD 150", type: "student", popular: false },
+    { category: "Academician / Researcher", national: "INR 12,000", international: "USD 200", type: "academic", popular: true },
+    { category: "Industry Professional", national: "INR 13,000", international: "USD 250", type: "industry", popular: false },
+    { category: "Attendee / Co-author", national: "INR 1,500", international: "USD 100", type: "attendee", popular: false }
   ],
 
 
