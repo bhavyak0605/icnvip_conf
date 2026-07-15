@@ -213,8 +213,10 @@ function renderCommitteeLists() {
 
     let html = "";
     window.ConferenceData.committee[role].forEach(member => {
+      const hasImage = member.avatar && (member.avatar.endsWith('.jpeg') || member.avatar.endsWith('.png') || member.avatar.endsWith('.jpg') || member.avatar.includes('/'));
       html += `
-        <div class="card committee-card card-hover fade-up">
+        <div class="card committee-card card-hover ${hasImage ? 'has-avatar' : ''} fade-up">
+          ${hasImage ? `<img src="${member.avatar}" alt="${member.name}" class="committee-avatar-img">` : ''}
           <h4 class="member-name font-poppins font-bold">${member.name}</h4>
           <span class="member-designation">${member.designation}</span>
           <p class="member-institution">${member.institution}</p>
@@ -234,8 +236,10 @@ function renderPatronsLists() {
 
     let html = "";
     window.ConferenceData.committee.patrons[role].forEach(member => {
+      const hasImage = member.avatar && (member.avatar.endsWith('.jpeg') || member.avatar.endsWith('.png') || member.avatar.endsWith('.jpg') || member.avatar.includes('/'));
       html += `
-        <div class="card committee-card card-hover fade-up">
+        <div class="card committee-card card-hover ${hasImage ? 'has-avatar' : ''} fade-up">
+          ${hasImage ? `<img src="${member.avatar}" alt="${member.name}" class="committee-avatar-img">` : ''}
           <h4 class="member-name font-poppins font-bold">${member.name}</h4>
           <span class="member-designation">${member.designation}</span>
           <p class="member-institution">${member.institution}</p>

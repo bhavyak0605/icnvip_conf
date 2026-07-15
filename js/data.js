@@ -59,7 +59,7 @@ window.ConferenceData = {
   committee: {
     patrons: {
       inspiration: [
-        { name: "Hon'ble. Dr. Patangrao Kadam", designation: "Founder Chancellor", institution: "Bharati Vidyapeeth and Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "PK" }
+        { name: "Hon'ble. Dr. Patangrao Kadam", designation: "Founder Chancellor", institution: "Bharati Vidyapeeth and Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "img/committee/patangraokadam.jpeg" }
       ],
       chief: [
         { name: "Hon'ble. Dr. Shivajirao Kadam", designation: "Chancellor", institution: "Bharati Vidyapeeth (Deemed to be University), Pune", avatar: "SK" },
